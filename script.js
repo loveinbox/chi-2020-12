@@ -9,3 +9,9 @@ function autoVideo() {
     }
   }, 500)
 }
+
+
+var header = document.querySelector('.header')
+header.addEventListener('click', function () {
+  document.body.scrollIntoView()
+})
