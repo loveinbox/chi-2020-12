@@ -5,7 +5,6 @@ function autoVideo(selector) {
     var top = video.getBoundingClientRect().top
     if (top > 0 && top < 1000) {
       video.play()
-      console.log(123)
       clearInterval(timer)
     }
   }, 500)
@@ -13,7 +12,7 @@ function autoVideo(selector) {
 
 autoVideo('#video1')
 autoVideo('#video2')
-
+autoVideo('#video3')
 
 var header = document.querySelector('.header')
 header.addEventListener('click', function () {
