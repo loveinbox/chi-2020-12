@@ -34,7 +34,7 @@ div {
 section.marquee-wrap {
   white-space: nowrap;
   overflow: auto;
-  display: flex;
+  /* display: flex; */
 }
 
 section.marquee-text{
@@ -45,7 +45,9 @@ section.marquee-text{
 }
 
 .marquee {
+  box-sizing: border-box;
   display: inline-block;
+  padding: 0 15px;
 }
 
 .header {
