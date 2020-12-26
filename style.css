@@ -34,7 +34,6 @@ div {
 section.marquee-wrap {
   white-space: nowrap;
   overflow: auto;
-  /* display: flex; */
 }
 
 section.marquee-text{
