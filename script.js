@@ -35,6 +35,20 @@ videoRealPlay({ori: 'p-1', real: 'p1r'})
 videoRealPlay({ori: 'p-2', real: 'p2r'})
 videoRealPlay({ori: 'p-3', real: 'p3r'})
 
+var images = document.querySelectorAll('.big')
+for (var i = 0;i< images.length;i++){
+  (function (j) {
+    var dom = images[j]
+    dom.addEventListener('click', function () {
+      if (dom.className === 'big home-video') {
+        dom.className = 'big'
+      } else {
+        dom.className = 'big home-video'
+      }
+    })
+  })(i)
+}
+
 
 var header = document.querySelector('.header')
 header.addEventListener('click', function () {
