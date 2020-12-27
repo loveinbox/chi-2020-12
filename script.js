@@ -14,6 +14,8 @@ autoVideo('#p-1')
 autoVideo('#p-2')
 autoVideo('#p-3')
 autoVideo('#video1')
+autoVideo('#video2')
+autoVideo('#video3')
 
 var header = document.querySelector('.header')
 header.addEventListener('click', function () {
