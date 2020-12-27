@@ -1,22 +1,4 @@
-function autoVideo(selector) {
-  var video = document.querySelector(selector)
-
-  var timer = setInterval(function () {
-    var top = video.getBoundingClientRect().top
-    if (top > 0 && top < 1000) {
-      video.play()
-      clearInterval(timer)
-    }
-  }, 500)
-}
-
-// autoVideo('#p-1')
-// autoVideo('#p-2')
-// autoVideo('#p-3')
-// autoVideo('#video1')
-// autoVideo('#video2')
-// autoVideo('#video3')
-
+// 视频播发源
 function videoRealPlay(obj) {
   var videoOri = document.querySelector(`#${obj.ori}`)
   var videoReal = document.querySelector(`#${obj.real}`)
@@ -35,6 +17,7 @@ videoRealPlay({ori: 'p-1', real: 'p1r'})
 videoRealPlay({ori: 'p-2', real: 'p2r'})
 videoRealPlay({ori: 'p-3', real: 'p3r'})
 
+// 图片放大
 var images = document.querySelectorAll('.big')
 for (var i = 0;i< images.length;i++){
   (function (j) {
@@ -44,7 +27,7 @@ for (var i = 0;i< images.length;i++){
       var domC = dom.cloneNode(true)
       domC.className = 'big home-video temp'
       document.body.appendChild(domC)
-      var instance = panzoom(domC.querySelector('img'), {
+      panzoom(domC.querySelector('img'), {
         maxZoom: 2,
         minZoom: 1,
       })
@@ -58,7 +41,7 @@ for (var i = 0;i< images.length;i++){
   })(i)
 }
 
-
+// 回到头部
 var header = document.querySelector('.header')
 header.addEventListener('click', function () {
   document.body.scrollIntoView()
