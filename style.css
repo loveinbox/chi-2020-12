@@ -119,3 +119,22 @@ section.marquee-text{
   margin-top: -27px;
   margin-bottom: 10px;
 }
+
+.home-video {
+  visibility: hidden;
+  z-index: 100;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: fill;/*这里是关键*/
+  width: auto;
+  height: auto;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+.home-video.show {
+  visibility:visible;
+}
