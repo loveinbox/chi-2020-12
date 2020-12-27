@@ -27,10 +27,10 @@ for (var i = 0;i< images.length;i++){
       var domC = dom.cloneNode(true)
       domC.className = 'big home-video temp'
       document.body.appendChild(domC)
-      panzoom(domC.querySelector('img'), {
-        maxZoom: 2,
-        minZoom: 1,
-      })
+      // panzoom(domC.querySelector('img'), {
+      //   maxZoom: 2,
+      //   minZoom: 1,
+      // })
       setTimeout(function () {
         var domT = document.querySelector('.temp')
         document.body.addEventListener('click', function () {
