@@ -36,7 +36,7 @@ for (var i = 0;i< images.length;i++){
         document.body.addEventListener('click', function () {
           domT.remove()
         })
-      }, 500)
+      }, 0)
     })
   })(i)
 }
