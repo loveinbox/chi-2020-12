@@ -124,15 +124,12 @@ section.marquee-text{
 .home-video {
   z-index: 100;
   position: fixed;
-  top: 50%;
-  left: 50%;
+  top: 0;
+  left: 0;
   min-width: 100%;
   min-height: 100%;
   width: auto !important;
   height: auto !important;
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
   background-color: black;
   display: flex;
   justify-content: center;
