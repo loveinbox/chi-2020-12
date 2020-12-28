@@ -1,9 +1,159 @@
 <html>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-  <link rel="stylesheet" href="./style.css">
-<style>
-</style>
+  <style>
+    html,body{
+    max-width: 450px;
+    background: #fff;
+    margin: 0 auto;
+    font-family: Helvetica Neue, Helvetica, sans-serif;
+  }
+  body {
+    margin-bottom: 50px;
+  }
+  img{
+    width: 100%;
+  }
+  p {
+    margin: 20px;
+  }
+  div {
+    box-sizing: border-box;
+  }
+  .flex {
+    display: flex;
+  }
+  .mt {
+    margin-top: 35px;
+  }
+  .mb {
+    margin-bottom: 25px;
+  }
+
+
+  .title {
+    font-size: 35px;font-weight: 600;
+  }
+  .content {
+    font-size: 13px;margin:10px 20px;
+  }
+  .e-title {
+    font-size: 35px;font-weight: 700;
+    font-family: Helvetica Neue, Helvetica, sans-serif;
+  }
+  .e-font {
+    font-family: Helvetica Neue, Helvetica, sans-serif;
+  }
+  .sub-title{
+    font-size: 20px;font-weight: 700;margin: 30px 20px 15px 20px;
+  }
+  section.marquee-wrap {
+    white-space: nowrap;
+    overflow: auto;
+    font-size: 0;
+  }
+
+  section.marquee-text{
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    margin: 15px 0;
+  }
+
+  .marquee {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 80%;
+  }
+
+  .header {
+    display: block;
+    position: -webkit-sticky;
+    position: sticky;
+    top: -1px;
+    z-index: 10;
+    background: #fff;
+    transform: none!important;
+  }
+
+  .img-video {
+    margin: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .img-video img{
+    width: 150px;
+    height: 85px;
+  }
+  .img-video video{
+    width: 150px;
+    height: 85px;
+  }
+
+  .title + .title{
+    margin-top: -33px;
+  }
+  .sub-title + .sub-title{
+    margin-top: -20px;
+  }
+  .sub-title-small{
+    font-size: 17px;font-weight: 700;margin: 20px 20px 5px 20px;
+  }
+
+  .tip-2 {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .col-box {
+    display: flex;
+    margin: 10px 0;
+  }
+
+  .col-box p{
+    margin: 0;
+  }
+
+  .e-sub-title{
+    font-size: 18px;font-weight: 700;
+    font-family: Helvetica Neue, Helvetica, sans-serif;
+  }
+  .e-sub-title + .e-sub-title{
+    margin-top: -27px;
+    margin-bottom: 10px;
+  }
+
+  .home-video {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto !important;
+    height: auto !important;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home-video.hide {
+    visibility:hidden;
+  }
+
+  .home-video.show {
+    visibility:visible;
+  }
+
+  .home-video img {
+    width: 100%;
+    height: auto !important;
+  }
+  </style>
 <body>
   <div style="min-height: 800px;width: 100%;margin-bottom: 30px;">
     <img src="https://chi-2018.oss-cn-hangzhou.aliyuncs.com/2020-12/cover-2.gif">
@@ -63,7 +213,7 @@
     src="https://chi-2018.oss-cn-hangzhou.aliyuncs.com/2020-12/03.m4v"></video>
   </section>
   <p class="sub-title">稳定性：</p>
-  <p class="content">目前尚不清楚纠正双脚外翻是否是减少运动伤病的真正原因，因此为带来更大众化的稳定性解决方案 – “无步态控制”，耐克跑步团队增宽了中底，以承接更多的缓震，使鞋底更加平稳。</p>
+  <p class="content">最后，为了实现脚跟到脚趾之间更流畅的过渡，耐克团队借鉴了VAPORFLY跑鞋的设计经验，设计出了ROCKER GEOMETRY的几何设计，以实现这种平滑的过渡。</p>
   <section class="img-video">
     <div class="big">
       <div>
@@ -269,7 +419,51 @@
     </a>
   </section>
   <img src="https://chi-2018.oss-cn-hangzhou.aliyuncs.com/2020-12/11_11.jpg">
-  <!-- <script src='https://unpkg.com/panzoom@9.4.0/dist/panzoom.min.js'></script> -->
-  <script src="./script.js"></script>
+  <script>
+    // 视频播发源
+    function videoRealPlay(obj) {
+      var videoOri = document.querySelector(`#${obj.ori}`)
+      var videoReal = document.querySelector(`#${obj.real}`)
+      videoOri.addEventListener('click', function () {
+        videoReal.play()
+        videoReal.style.visibility = 'visible'
+      })
+
+      videoReal.addEventListener('click', function () {
+        videoReal.pause()
+        videoReal.style.visibility = 'hidden'
+      })
+    }
+
+    videoRealPlay({ori: 'p-1', real: 'p1r'})
+    videoRealPlay({ori: 'p-2', real: 'p2r'})
+    videoRealPlay({ori: 'p-3', real: 'p3r'})
+
+    // 图片放大
+    var images = document.querySelectorAll('.big')
+    for (var i = 0;i< images.length;i++){
+      (function (j) {
+        var dom = images[j]
+        
+        dom.addEventListener('click', function () {
+          var domC = dom.cloneNode(true)
+          domC.className = 'big home-video temp'
+          document.body.appendChild(domC)
+          setTimeout(function () {
+            var domT = document.querySelector('.temp')
+            document.body.addEventListener('click', function () {
+              domT.remove()
+            })
+          }, 0)
+        })
+      })(i)
+    }
+
+    // 回到头部
+    var header = document.querySelector('.header')
+    header.addEventListener('click', function () {
+      document.body.scrollIntoView()
+    })
+  </script>
 </body>
 </html>
